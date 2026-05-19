@@ -7,12 +7,13 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #FAFAFA; /* Light-gray background */
+    font-family: 'Helvetica Neue', 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    /*background-color: #FAFAFA; !* Light-gray background *!*/
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Helvetica Neue', 'Inter', sans-serif;
     font-weight: normal !important; /* Make headings not bold */
 }
 
@@ -55,38 +56,41 @@ h1, h2, h3, h4, h5, h6 {
 
 .publication-entry {
     display: flex;
-    background: white;
     overflow: hidden;
-    margin-bottom: 2rem;
-    height: 180px; /* Fixed height for publication entry box */
+    height: 120px; /* Fixed height for publication entry box */
 }
 
 .publication-video {
     position: relative;
-    height: 100%;
+    /* Remove height constraint */
+    /*height: auto;*/
 }
 
 .publication-video a {
     display: block;
-    height: 100%;
-    width: 100%;
+    width: auto;
 }
 
 .publication-video video {
-    width: 240px;
-    height: 180px;
+    width: 160px;
+    height: 120px;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.publication-entry:hover .publication-video video {
+    transform: scale(1.05);
 }
 
 .publication-details {
     flex: 1;
-    padding-top: 0.75rem;
-    padding-left: 2rem;
-    padding-right: 1rem;
+    /*padding-right: 1rem;*/
     display: flex;
     flex-direction: column;
-    /*justify-content: flex-center;*/
+    object-position: top;
+    justify-content: flex-start;
 }
 
 .publication-details h3, .publication-details p {
@@ -100,5 +104,5 @@ h1, h2, h3, h4, h5, h6 {
 .publication-details .actions {
     margin-top: auto; /* Push buttons to the bottom */
     display: flex;
-    gap: 0.5rem;
+    /*gap: 0.5rem;*/
 }
