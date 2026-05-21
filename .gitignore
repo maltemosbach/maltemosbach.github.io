@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Gatsby build artifacts
+.cache/
+public/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+
+# Environment
+.env
+.env.*

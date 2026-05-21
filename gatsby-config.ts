@@ -12,17 +12,17 @@ const config: GatsbyConfig = {
     graphqlTypegen: true,
     plugins: [
         "gatsby-plugin-postcss",
-        // "gatsby-plugin-google-gtag",
-        "gatsby-plugin-sitemap",
         {
-            resolve: "gatsby-plugin-google-gtag",
+            resolve: "gatsby-plugin-google-fonts",
             options: {
-                trackingIds: [
-                    // Change this to your own Google Analytics Tracking ID
-                    "G-T7NKWVQH1D",
+                fonts: [
+                    "Geist:300,400,500,600,700",
+                    "Geist+Mono:400,500",
                 ],
-            }
+                display: "swap",
+            },
         },
+        "gatsby-plugin-sitemap",
         {
             resolve: 'gatsby-plugin-manifest',
             options: {

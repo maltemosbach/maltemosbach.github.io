@@ -4,22 +4,15 @@ interface AuthorProps {
     name: string;
     website: string;
     isMe?: boolean;
-    lastAuthor?: string;
+    lastAuthor?: boolean;
 }
 
-const Author: React.FC<AuthorProps> = ({ name, website, isMe, lastAuthor }) => {
+const Author: React.FC<AuthorProps> = ({ name, isMe, lastAuthor }) => {
+    const color = isMe ? 'text-foreground' : 'text-muted-foreground';
+
     return (
         <span className="text-center inline-block">
-            <a
-                href={website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`no-underline${
-                    isMe ? 'text-stone' : 'text-stone-700'
-                }`}
-            >
-                {name}
-            </a>
+            <span className={color}>{name}</span>
             {lastAuthor ? null : <>,&nbsp;</>}
         </span>
     );

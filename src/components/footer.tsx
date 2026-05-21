@@ -1,26 +1,21 @@
-// src/components/footer.tsx
 import React from 'react';
-import { AiFillGithub, AiOutlineGoogle, AiFillLinkedin } from 'react-icons/ai';
+import ActionLink from './actionLink';
+import ThemeToggle from './themeToggle';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="mb-4 mt-4">
-            <div className="container mx-auto max-w-4xl flex justify-between items-center">
-                <div className="flex">
-                    <a href="https://www.uni-bonn.de/en/imprint" className="text-gray-800 hover:text-gray-600 mr-8">Imprint</a>
-                    <a href="https://www.uni-bonn.de/en/data-protection-policy" className="text-gray-800 hover:text-gray-600">Data Protection Policy</a>
+        <footer className="mb-4 mt-16">
+            <div className="container mx-auto max-w-5xl flex justify-between items-center">
+                <div className="flex flex-wrap items-center gap-2">
+                    <ActionLink url="https://www.uni-bonn.de/en/imprint">imprint</ActionLink>
+                    <ActionLink url="https://www.uni-bonn.de/en/data-protection-policy">data protection policy</ActionLink>
                 </div>
 
-                <div className="flex">
-                    <a href="https://github.com/maltemosbach" className="text-gray-800 hover:text-gray-600 mr-8">
-                        <AiFillGithub size={24} />
-                    </a>
-                    <a href="https://scholar.google.de/citations?user=OQv4g3kAAAAJ&hl=de&oi=ao" className="text-gray-800 hover:text-gray-600 mr-8">
-                        <AiOutlineGoogle size={24} />
-                    </a>
-                    <a href="https://de.linkedin.com/in/mosbach" className="text-gray-800 hover:text-gray-600">
-                        <AiFillLinkedin size={24} />
-                    </a>
+                <div className="flex items-center gap-4">
+                    <div className="font-mono text-sm text-muted-foreground">
+                        © {new Date().getFullYear()} Malte Mosbach
+                    </div>
+                    <ThemeToggle />
                 </div>
             </div>
         </footer>
