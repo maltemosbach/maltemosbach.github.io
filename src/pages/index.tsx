@@ -154,7 +154,7 @@ const publications = [
         teaser: { type: 'video', src: irc_2022 },
         title: 'Efficient Representations of Object Geometry for Reinforcement Learning of Interactive Grasping Policies',
         arxivId: '2211.10957',
-        projectLink: 'https://maltemosbach.github.io/geometry_aware_grasping',
+        projectLink: 'https://maltemosbach.github.io/geometry_aware_grasping_policies/',
         conference: 'IRC 2022',
         authors: mosbachAndBehnke,
     },
