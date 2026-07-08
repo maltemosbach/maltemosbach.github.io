@@ -15,6 +15,22 @@ const setThemeScript = `
 
 exports.onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
+        React.createElement('link', {
+            key: 'gfonts-preconnect',
+            rel: 'preconnect',
+            href: 'https://fonts.googleapis.com',
+        }),
+        React.createElement('link', {
+            key: 'gfonts-preconnect-gstatic',
+            rel: 'preconnect',
+            href: 'https://fonts.gstatic.com',
+            crossOrigin: 'anonymous',
+        }),
+        React.createElement('link', {
+            key: 'gfonts-css',
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap',
+        }),
         React.createElement('script', {
             key: 'theme-init',
             dangerouslySetInnerHTML: { __html: setThemeScript },

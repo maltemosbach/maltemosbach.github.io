@@ -5,21 +5,23 @@ interface OpenSourceProps {
     repo: string;
     description: string;
     link?: string;
+    role?: 'maintainer' | 'contributor';
     // Legacy fields, kept for backwards compatibility in the data array.
     teaser?: { src: string };
     title?: string;
     paperLink?: string;
 }
 
-const OpenSource: React.FC<OpenSourceProps> = ({ repo, description, link }) => {
+const OpenSource: React.FC<OpenSourceProps> = ({ repo, description, link, role = 'maintainer' }) => {
     const repoUrl = link || `https://github.com/${repo}`;
+    const isContributor = role === 'contributor';
 
     return (
         <a
             href={repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-muted border border-border rounded-xl px-5 py-4 mb-3 hover:bg-muted-hover hover:opacity-100 transition-colors duration-200"
+            className={`block bg-muted border rounded-xl px-5 py-4 mb-3 hover:bg-muted-hover hover:opacity-100 transition-colors duration-200 ${isContributor ? 'border-link' : 'border-border'}`}
         >
             <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">

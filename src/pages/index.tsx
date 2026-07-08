@@ -191,6 +191,11 @@ const publications = [
 
 const openSourceProjects = [
     {
+        repo: 'allenai/vla-evaluation-harness',
+        description: 'Evaluation harness for Vision-Language-Action models.',
+        role: 'contributor' as const,
+    },
+    {
         teaser: { type: 'video', src: sold },
         title: 'SOLD Official implementation',
         repo: 'maltemosbach/sold',
@@ -231,8 +236,9 @@ const IndexPage: React.FC<PageProps> = () => {
                     {/*    Scholar</a>.*/}
                     {/*</div>*/}
                     <div className="mt-4 text-muted-foreground">
-                        Publications are sorted by recency. Representative papers are{' '}
-                        <span className="bg-highlight-bg border border-highlight-border px-1.5 py-0.5 rounded">highlighted</span>.
+                        Sorted by recency, with{' '}
+                        <span className="bg-highlight-bg border border-highlight-border px-1.5 py-0.5 rounded">representative</span>
+                        {' '}papers highlighted.
                     </div>
                     <div className="mt-6">
                         {publications.map((pub, index) => (
@@ -251,7 +257,8 @@ const IndexPage: React.FC<PageProps> = () => {
                         </div> */}
                     </div>
                     <div className="mt-4 text-muted-foreground">
-                        Reference implementations and tooling released alongside my research.
+                        Some reference implementations and tooling released alongside my research and repos I&apos;ve {' '}
+                        <span className="border border-link rounded px-1.5 py-0.5">contributed</span> {' '} to.
                     </div>
                     <div className="mt-6">
                         {openSourceProjects.map((project, index) => (
